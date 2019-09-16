@@ -7,7 +7,9 @@ var app = express();
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var PORT = process.env.PORT || 8080;
-
+var SQL_DB = process.env.SQL_DB;
+var SQL_PASS = process.env.SQL_PASS;
+var SQL_USER = process.env.SQL_USER;
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,9 +20,9 @@ app.set("view engine", "handlebars");
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
-  user: "root",
-  password: "Itapeva1998",
-  database: "day_planner_db"
+  user: SQL_USER,
+  password: SQL_PASS,
+  database: SQL_DB
 });
 
 connection.connect(function(err) {
