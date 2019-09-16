@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 8080;
 var SQL_DB = process.env.SQL_DB;
 var SQL_PASS = process.env.SQL_PASS;
 var SQL_USER = process.env.SQL_USER;
-var SQL_HOST = process.env.SQL_HOST
+var SQL_HOST = process.env.SQL_HOST;
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
